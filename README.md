@@ -1,3 +1,7 @@
+CAPTIONS WEBSITE
+--------------------------------------------------------------------------------------
+This website takes a video file in a 9:16 aspect ratio and adds captions that are editable in any color of your choosing. More fonts can be added in the code using ttf files. This application uses Tailwind, Javascript, HTML, CSS, AWS for transcription and file upload storage, and ffmpeg for color and text selection and editing.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
