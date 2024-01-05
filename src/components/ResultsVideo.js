@@ -3,6 +3,9 @@ import {transcriptionItemsToSrt} from "@/libs/awsTranscriptionHelpers";
 import {FFmpeg} from "@ffmpeg/ffmpeg";
 import {toBlobURL, fetchFile} from "@ffmpeg/util";
 import {useEffect, useState, useRef} from "react";
+
+//import fonts in font folder
+//also need to add webpack in next.config.js to work
 import roboto from "./../fonts/Roboto-Regular.ttf";
 import robotoBold from './../fonts/Roboto-Bold.ttf';
 
@@ -27,6 +30,7 @@ export default function ResultVideo({filename,transcriptionItems}) {
       coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, 'text/javascript'),
       wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, 'application/wasm'),
     });
+    //download fonts from github such as ttf files and can change them here
     await ffmpeg.writeFile('/tmp/roboto.ttf', await fetchFile(roboto));
     await ffmpeg.writeFile('/tmp/roboto-bold.ttf', await fetchFile(robotoBold));
     setLoaded(true);
@@ -78,6 +82,8 @@ export default function ResultVideo({filename,transcriptionItems}) {
           <span>Apply captions</span>
         </button>
       </div>
+      
+      {/* primary color and outline color styling in globals css*/}
       <div>
         primary color:
         <input type="color"
